@@ -1,14 +1,45 @@
-# README
+---
+layout: docs
+title: Resolvers
+---
 
-Add your resolver readme here. Remember to include the following:
+# Overview
 
-- Tell people how to install it (e.g. pip install ...).
-- Be clear about the purpose of the resolver, its capabilities and limitations.
-- Tell people how to use it.
-- Give examples of the resolver in use.
+The purpose of this resolver is to retrieve the current datetime
 
-Read our wiki to learn how to use this repo:
-https://github.com/Sceptre/project/wiki/Sceptre-Resolver-Template
+## Available Resolvers
 
-If you have any questions or encounter an issue
-[please open an issue](https://github.com/Sceptre/project/issues/new)
+### date
+
+Fetches the current datetime in an [ISO 8601 format](https://docs.python.org/3/library/time.html#time.strftime).
+The default format is "%Y-%m-%d %H:%M:%S".
+
+Syntax:
+
+```yaml
+parameter|sceptre_user_data:
+    <name>: !date
+```
+
+Examples:
+
+Retrieve date (using default format) and pass it to a
+cloudformation parameter:
+```
+parameters:
+    now: !date
+```
+
+Retrieve the date (in MM/DD/YYYY format) and pass it to a
+cloudformation parameter:
+```
+parameters:
+    now: !date "%m/%d/%Y"
+```
+
+Retrieve the time (in H:M:S format) and pass it to a
+cloudformation parameter:
+```
+parameters:
+    now: !date "%H:%M:%S"
+```
