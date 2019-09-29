@@ -1,25 +1,25 @@
 from setuptools import setup, find_packages
 
-__version__ = "0.0.1"
+__version__ = "1.0.0"
 
 # More information on setting values:
 # https://github.com/Sceptre/project/wiki/sceptre-resolver-template
 
 # lowercase, use `-` as separator.
-RESOLVER_NAME = 'sceptre-resolver-template'
+RESOLVER_NAME = 'sceptre-date-resolver'
 # the resolver call in sceptre e.g. !command_name.
-RESOLVER_COMMAND_NAME = 'custom_resolver'
+RESOLVER_COMMAND_NAME = 'date'
 # do not change. Rename resolver/resolver.py to resolver/{RESOLVER_COMMAND_NAME}.py
 RESOLVER_MODULE_NAME = 'resolver.{}'.format(RESOLVER_COMMAND_NAME)
 # CamelCase name of resolver class in resolver.resolver.
-RESOLVER_CLASS = 'CustomResolver'
+RESOLVER_CLASS = 'DateResolver'
 # One line summary description
-RESOLVER_DESCRIPTION = ''
+RESOLVER_DESCRIPTION = 'A Sceptre resolver to retrieve the current datetime'
 # if multiple use a single string with comma separated names.
-RESOLVER_AUTHOR = 'Sceptre'
+RESOLVER_AUTHOR = 'zaro0508'
 # if multiple use single string with commas.
-RESOLVER_AUTHOR_EMAIL = 'sceptre@cloudreach.com'
-RESOLVER_URL = 'https://github.com/sceptre/{}'.format(RESOLVER_NAME)
+RESOLVER_AUTHOR_EMAIL = 'zaro0508@gmail.com'
+RESOLVER_URL = 'https://github.com/sceptre/sceptre-date-resolver{}'.format(RESOLVER_NAME)
 
 with open("README.md") as readme_file:
     README = readme_file.read()

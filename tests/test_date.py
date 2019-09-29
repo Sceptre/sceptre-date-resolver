@@ -1,5 +1,5 @@
 
-class TestStackActions(object):
+class TestDateResolver(object):
     def setup_method(self, test_method):
         pass
 
