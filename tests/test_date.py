@@ -5,6 +5,7 @@ from datetime import datetime
 from mock import MagicMock
 from sceptre.stack import Stack
 
+
 class TestDateResolver(object):
 
     def setup_method(self, test_method):
