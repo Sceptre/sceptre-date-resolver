@@ -38,8 +38,9 @@ class DateResolver(Resolver):
 
         try:
             now = datetime.now()
-            print("\nit's now: "+str(now))
             date = now.strftime(format)
+            self.logger.debug("%s - date: %s",
+                              self.stack.name, date)
 
         except Exception as e:
             raise e
