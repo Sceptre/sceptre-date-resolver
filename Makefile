@@ -7,7 +7,7 @@ coverage: coverage-all
 		coverage report --show-missing
 
 test:
-	    python -m pytest --junitxml=test-reports/junit.xml
+	    pytest --junitxml=test-reports/junit.xml
 
 lint:
 	    flake8 .
