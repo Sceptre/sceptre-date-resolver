@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
-import datetime
+from datetime import datetime
 
 from sceptre.resolvers import Resolver
 
@@ -23,7 +23,7 @@ class Date(Resolver):
 
     def resolve(self):
         """
-        Retrieves the current date.
+        Retrieves the current date in ISO 8601 format
 
         :returns: the current date
         :rtype: str
@@ -34,16 +34,11 @@ class Date(Resolver):
             format = self.argument
 
         try:
-            now = datetime.datetime.now()
+            now = datetime.now()
+            print("\nit's now: "+str(now))
             date = now.strftime(format)
-            self.logger.debug("%s - date: %s",
-                              self.stack.name, date)
-        except ValueError as ve:
-            self.logger.error("%s - Invalid date format: %s",
-                              self.stack.name, format)
+
         except Exception as e:
-            self.logger.error("%s - Failed to resolve date",
-                              self.stack.name)
             raise e
 
         return date
