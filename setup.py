@@ -12,7 +12,7 @@ RESOLVER_COMMAND_NAME = 'date'
 # do not change. Rename resolver/resolver.py to resolver/{RESOLVER_COMMAND_NAME}.py
 RESOLVER_MODULE_NAME = 'resolver.{}'.format(RESOLVER_COMMAND_NAME)
 # CamelCase name of resolver class in resolver.resolver.
-RESOLVER_CLASS = 'DateResolver'
+RESOLVER_CLASS = 'Date'
 # One line summary description
 RESOLVER_DESCRIPTION = 'A Sceptre resolver to retrieve the current datetime'
 # if multiple use a single string with comma separated names.
