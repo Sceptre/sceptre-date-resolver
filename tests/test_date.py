@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import pytest
-
-from resolver.date import Date
+from resolver.date import DateResolver
 from datetime import datetime
+
 
 class TestDateResolver(object):
 
     def setup_method(self, test_method):
-        self.file_contents_resolver = Date(
+        self.file_contents_resolver = DateResolver(
             argument=None
         )
 
@@ -22,10 +21,9 @@ class TestDateResolver(object):
 
     # invalid input will result in date in default format
     def test_resolving_with_invalid_format(self):
+        format = ""
+        expected_date = datetime.now().strftime(format)
+
         self.file_contents_resolver.argument = "invalid"
         result = self.file_contents_resolver.resolve()
-
-    # none input will result in date with default format
-    def test_resolving_with_none_format(self):
-        self.file_contents_resolver.argument = None
-        result = self.file_contents_resolver.resolve()
+        assert result[:10] != expected_date[:10]

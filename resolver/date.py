@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 
+import abc
+import six
 import logging
 from datetime import datetime
 
 from sceptre.resolvers import Resolver
 
 
-class Date(Resolver):
+@six.add_metaclass(abc.ABCMeta)
+class DateResolver(Resolver):
     """
     Resolves the current datetime.
 
@@ -19,7 +22,7 @@ class Date(Resolver):
 
     def __init__(self, *args, **kwargs):
         self.logger = logging.getLogger(__name__)
-        super(Date, self).__init__(*args, **kwargs)
+        super(DateResolver, self).__init__(*args, **kwargs)
 
     def resolve(self):
         """
