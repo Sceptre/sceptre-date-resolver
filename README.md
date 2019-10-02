@@ -1,11 +1,12 @@
----
-layout: docs
-title: Resolvers
----
-
 # Overview
 
 The purpose of this resolver is to retrieve the current datetime
+
+## Install
+
+```bash
+pip install sceptre-date-resolver
+```
 
 ## Available Resolvers
 
@@ -25,21 +26,21 @@ Examples:
 
 Retrieve date (using default format) and pass it to a
 cloudformation parameter:
-```
+```yaml
 parameters:
     now: !date
 ```
 
 Retrieve the date (in MM/DD/YYYY format) and pass it to a
 cloudformation parameter:
-```
+```yaml
 parameters:
     now: !date "%m/%d/%Y"
 ```
 
 Retrieve the time (in H:M:S format) and pass it to a
 cloudformation parameter:
-```
+```yaml
 parameters:
     now: !date "%H:%M:%S"
 ```
