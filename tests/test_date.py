@@ -7,13 +7,10 @@ from sceptre.stack import Stack
 
 
 class TestDateResolver(object):
-
     def setup_method(self, test_method):
         stack = MagicMock(spec=Stack)
         stack.name = "test"
-        self.date_resolver = DateResolver(
-            None, stack
-        )
+        self.date_resolver = DateResolver(None, stack)
 
     def test_resolving_with_valid_format(self):
         format = "%m/%d/%Y"
