@@ -39,8 +39,7 @@ class DateResolver(Resolver):
         try:
             now = datetime.now()
             date = now.strftime(format)
-            self.logger.debug("%s - date: %s",
-                              self.stack.name, date)
+            self.logger.debug("%s - date: %s", self.stack.name, date)
 
         except Exception as e:
             raise e
